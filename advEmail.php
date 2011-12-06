@@ -1,7 +1,10 @@
 <?php
 
   /**
-  * geekMail-1.0.php - A standalone version of the CodeIgniter PHP Framework's Email library
+  * advEmail.php
+  *
+  *	Forked from geekMail to add extra features
+  *	A standalone version of the CodeIgniter PHP Framework's Email library
   * 
   * - Version 1.0
   * 
@@ -22,35 +25,40 @@
   * --------------
   * <?php
   * 
-  *   require 'geekMail-1.0.php';
+  *   require 'advEmail.php';
   *   
-  *   $geekMail = new geekMail();
+  *   $advEmail = new advEmail();
   *   
-  *   $geekMail->setMailType('html');
+  *   $advEmail->setMailType('html');
   *   
-  *   $geekMail->from('noreply@geekology.co.za', 'Geekology');
+  *   $advEmail->from('noreply@mattclements.co.uk', 'Matt Clements');
   *   
-  *   $geekMail->to('willem@geekology.co.za');
-  *   //$geekMail->cc('willem@geekology.co.za');
-  *   //$geekMail->bcc('willem@geekology.co.za');
+  *   $advEmail->to('matt@mattclements.co.uk');
+  *   //$advEmail->cc('matt@mattclements.co.uk');
+  *   //$advEmail->bcc('matt@mattclements.co.uk');
   *   
-  *   $geekMail->subject('Example subject');
+  *   $advEmail->subject('Example subject');
   *   
-  *   $geekMail->message('Example message.');
+  *   $advEmail->message('Example message.');
+  *   $advEmail->set_alt_message('Text alternative email - manually set');
   *   
-  *   $geekMail->attach('/home/willem/file1.txt');
-  *   $geekMail->attach('/home/willem/file2.zip');
+  *   $advEmail->attach('/home/matt/file1.txt');
+  *   $advEmail->attach('/home/matt/file2.zip');
   *   
-  *   if (!$geekMail->send())
+  *   if (!$advEmail->send())
   *   {
-  *     $errors = $geekMail->getDebugger();
+  *     $errors = $advEmail->getDebugger();
   *     print_r($errors);
   *   }
   * 
   * ?>
   * 
+  *
+  *	Adapted by: Matt Clements
+  *	matt@mattclements.co.uk
+  *	http://www.mattclements.co.uk
   * 
-  * Adapted by: Willem van Zyl
+  * GeekMail developed by: Willem van Zyl
   * willem@geekology.co.za
   * http://www.geekology.co.za/blog/
   * 
@@ -64,7 +72,7 @@
   * ---
   */
   
-  class geekMail
+  class advEmail
   {
     private $_altBoundary   = '';
     private $_altMessage    = '';
@@ -107,9 +115,9 @@
     private $_smtpPort      = '25';
     private $_smtpTimeout   = 5;
     private $_smtpUser      = '';
-    private $_systemEmail   = 'noreply@kutchenarte.com';
+    private $_systemEmail   = 'noreply@mattclements.co.uk';
     private $_subject       = '';
-    private $_userAgent     = 'KutchenArte';
+    private $_userAgent     = 'Matt Clements';
     private $_validate      = false;
     private $_wordWrap      = false;
     private $_wrapChars     = '76';
@@ -126,7 +134,7 @@
       $this->_safeMode = ((boolean)@ini_get("safe_mode") === false) ? false : true;
       
       
-      $this->_logMessage('debug', 'geekMail Class Initialized');
+      $this->_logMessage('debug', 'advEmail Class Initialized');
     }
     
     
@@ -188,7 +196,7 @@
     */
     public function from($from, $name = '')
     {
-      //set the from address if contained in brackets (e.g. "<willem@geekology.co.za>"):
+      //set the from address if contained in brackets (e.g. "<matt@mattclements.co.uk>"):
       if (preg_match( '/\<(.*)\>/', $from, $match))
       {
         $from = $match['1'];
@@ -226,7 +234,7 @@
     */
     private function _replyTo($replyTo, $name = '')
     {
-      //set the reply-to address if contained in brackets (e.g. "<willem@geekology.co.za>"):
+      //set the reply-to address if contained in brackets (e.g. "<matt@mattclements.co.uk>"):
       if (preg_match( '/\<(.*)\>/', $replyTo, $match))
       {
         $replyTo = $match['1'];
@@ -409,6 +417,9 @@
       $this->_altMessage = ($str == '') ? '' : $str;
     }
     
+    /**
+    * Manually set the text alternative email
+    */
     public function set_alt_message($str = '')
 	{
 		$this->_altMessage = (string) $str;
@@ -644,7 +655,7 @@
     
     
     /**
-    * Clean extended email address (e.g. "Willem van Zyl <willem@geekology.co.za>").
+    * Clean extended email address (e.g. "Matt Clements <matt@mattclements.co.uk>").
     */
     private function _cleanEmail($email)
     {
