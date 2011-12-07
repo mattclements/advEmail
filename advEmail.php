@@ -190,6 +190,11 @@
       }
     }
     
+    public function clear($clearAttachments = false)
+    {
+    	$this->_clear($clearAttachments);
+    }
+    
     
     /**
     * Set the From address.
