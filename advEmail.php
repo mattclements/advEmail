@@ -234,6 +234,24 @@
     }
     
     
+    public function return_path($return_path)
+    {
+      //set the from address if contained in brackets (e.g. "<matt@mattclements.co.uk>"):
+      if (preg_match( '/\<(.*)\>/', $return_path, $match))
+      {
+        $return_path = $match['1'];
+      }
+      
+      //validate the email address if needed:
+      if ($this->_validate)
+      {
+        $this->_validateEmail($this->_strToArray($return_path));
+      }
+      
+      $this->_setHeader("Return-Path", "<{$return_path}>");
+    }
+    
+    
     /**
     * Set the Reply-to address.
     */
