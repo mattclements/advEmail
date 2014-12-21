@@ -1,7 +1,11 @@
 {
     "name": "mattclements/advEmail",
     "description": "Forked from geekMail to add extra features. A standalone version of the CodeIgniter PHP Framework's Email library",
+    "version": "1.0",
     "require": {
         "php": ">=5.3.0"
+    },
+    "autoload": {
+        "files": ["advEmail.php"]
     }
 }
