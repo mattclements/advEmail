@@ -1,4 +1,5 @@
-advEmail.php
+advEmail
+========
 
 Forked from geekMail to add extra features
 A standalone version of the CodeIgniter PHP Framework's Email library
@@ -12,14 +13,15 @@ This class is a standalone version of the Email library used in the CodeIgniter 
 
 
 Most of the existing CodeIgniter documentation for the library should work, with the exception
-that the library won't be dynamically loaded from a CodeIgniter controller ("$this->load->..." and
-"$this->email->from..."):
+that the library won't be dynamically loaded from a CodeIgniter controller (`$this->load->...` and
+"=`$this->email->from...`):
 
 - http://codeigniter.com/user_guide/libraries/email.html
 
 
 Usage example:
 --------------
+```php
 <?php
 
 require 'advEmail.php';
@@ -47,8 +49,7 @@ if (!$advEmail->send())
 	$errors = $advEmail->getDebugger();
 	print_r($errors);
 }
-
-?>
+```
 
 
 Adapted by: Matt Clements
