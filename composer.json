@@ -1,5 +1,5 @@
 {
-    "name": "mattclements/advEmail",
+    "name": "mattclements/adv-email",
     "description": "Forked from geekMail to add extra features. A standalone version of the CodeIgniter PHP Framework's Email library",
     "version": "1.0",
     "require": {
