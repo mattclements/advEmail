@@ -1,9 +1,19 @@
 {
-    "name": "mattclements/adv-email",
-    "description": "Forked from geekMail to add extra features. A standalone version of the CodeIgniter PHP Framework's Email library",
-    "version": "1.0",
-    "require": {
-        "php": ">=5.3.0"
+    "name" : "mattclements/adv-email",
+    "description" : "Forked from geekMail to add extra features. A standalone version of the CodeIgniter PHP Framework's Email library",
+    "keywords" : ["advEmail", "geekMail", "CodeIgniter", "Email"],
+    "type" : "library",
+    "homepage" : "https://github.com/mattclements/advEmail",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Matt Clements",
+            "email" : "matt@mattclements.co.uk",
+            "homepage" : "http://mattclements.co.uk"
+        }
+    ],
+    "require" : {
+        "php" : ">=5.3.0"
     },
     "autoload": {
         "files": ["advEmail.php"]
