@@ -99,7 +99,7 @@ class advEmail
     private $_mailPath      = '/usr/sbin/sendmail';
     private $_mailType      = 'text';
     private $_multipart     = 'mixed';
-    private $_newLine       = "\n";
+    private $_newLine       = "\r\n";
     private $_priorities    = array('1 (Highest)', '2 (High)', '3 (Normal)', '4 (Low)', '5 (Lowest)');
     private $_priority      = '3';
     private $_protocol      = 'mail';
