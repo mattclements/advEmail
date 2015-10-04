@@ -51,8 +51,9 @@ class AdvEmailTest extends PHPUnit_Framework_TestCase
     height: 80px;
 }
 </code></pre>');
-
         $advEmail->send();
+
+        exit;
     }
 
     /* @test */

@@ -1,4 +1,5 @@
 <?php
+
 /**
 * advEmail.php
 *
@@ -873,10 +874,10 @@ class advEmail
         }
       }
 
-      if ($this->_getProtocol() == 'mail')
+      /*if ($this->_getProtocol() == 'mail')
       {
         $this->_headerStr = rtrim($this->_headerStr);
-      }
+      }*/
     }
 
 
