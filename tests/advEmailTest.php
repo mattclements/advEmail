@@ -52,8 +52,6 @@ class AdvEmailTest extends PHPUnit_Framework_TestCase
 }
 </code></pre>');
         $advEmail->send();
-
-        exit;
     }
 
     /* @test */

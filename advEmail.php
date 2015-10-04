@@ -88,7 +88,7 @@ class advEmail
     private $_body          = '';
     private $_ccArray       = array();
     private $_charSet       = 'utf-8';
-    private $_crlf          = "\n";
+    private $_crlf          = "\r\n";
     private $_debugMsg      = array();
     private $_encoding      = '8bit';
     private $_finalBody     = '';
@@ -874,10 +874,10 @@ class advEmail
         }
       }
 
-      /*if ($this->_getProtocol() == 'mail')
+      if ($this->_getProtocol() == 'mail')
       {
         $this->_headerStr = rtrim($this->_headerStr);
-      }*/
+      }
     }
 
 
