@@ -107,7 +107,7 @@ class advEmail
     private $_recipients    = array();
     private $_replytoFlag   = false;
     private $_safeMode      = false;
-    private $_sendMultipart = true;
+    private $_sendMultipart = false;
     private $_smtpAuth      = false;
     private $_smtpConnect   = '';
     private $_smtpHost      = '';

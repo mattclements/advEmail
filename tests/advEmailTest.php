@@ -1,5 +1,9 @@
 <?php
+ini_set('display_errors', true);
+error_reporting(E_ALL);
+
 require_once(dirname(__FILE__).'/../advEmail.php');
+
 class AdvEmailTest extends PHPUnit_Framework_TestCase
 {
     public function __construct()
