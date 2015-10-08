@@ -396,7 +396,7 @@ class advEmail
     public function attach($filename, $disposition = 'attachment'/*'inline'*/)
     {
       $this->_attachName[] = $filename;
-      $this->_attachType[] = $this->_mimeTypes(next(explode('.', basename($filename))));
+      $this->_attachType[] = $this->_mimeTypes(next((explode('.', basename($filename)))));
       $this->_attachDisp[] = $disposition;
     }
 
